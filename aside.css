@@ -1,0 +1,116 @@
+aside {
+  /* background: var(--info-light); */
+  background: white;
+  height: 100vh;
+  position: static;
+}
+aside .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  /* margin-top: 1.4rem; */
+}
+aside .sidebar {
+  /* background: white; */
+  display: flex;
+  flex-direction: column;
+  top: 3rem;
+  height: 86vh;
+  position: relative;
+}
+aside h3 {
+  font-weight: 500;
+}
+
+aside .sidebar a {
+  display: flex;
+  color: var(--info-dark);
+  margin-left: 2rem;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  height: 3.7rem;
+  transition: all 300ms ease;
+}
+aside .sidebar a span {
+  font-size: 1.6rem;
+  transition: all 300ms ease;
+}
+aside .sidebar a:last-child {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+}
+aside .sidebar a.active {
+  color: white;
+  border-radius: 5px;
+  margin-left: 0;
+  background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+}
+aside .sidebar a.active:before {
+  content: "";
+  width: 6px;
+  height: 100%;
+  /* background-color: var(--dark-purple); */
+  background: white;
+}
+aside .sidebar a.active span {
+  /* color: ; */
+  margin-left: calc(1rem -3px);
+}
+aside .sidebar a:hover {
+  color: var(--light-blue);
+}
+aside .sidebar a span:hover {
+  margin-left: 1rem;
+}
+
+aside .close {
+  display: none;
+}
+/* ======MEDIA QUERIES ===== */
+@media screen and (max-width: 1200px) {
+  aside h3 {
+    display: none;
+  }
+  aside .sidebar a:last-child {
+    position: relative;
+    margin-top: 1.8rem;
+  }
+}
+/* FOR SMALL MOBILE AND SMALL TABS */
+@media screen and (max-width: 768px) {
+  aside {
+    position: fixed;
+    z-index: 3;
+    left: -100%;
+    box-shadow: 1rem 3rem 4rem #ccc;
+    height: 100vh;
+    display: none;
+    animation: showMenu 800ms ease-in forwards;
+  }
+  @keyframes showMenu {
+    to {
+      left: 0;
+    }
+  }
+  aside h3 {
+    display: inline;
+  }
+  aside .sidebar a:last-child {
+    position: relative;
+    margin-top: 1.8rem;
+  }
+  aside .close {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 1rem;
+
+    padding: 0.4rem;
+    border-radius: 1rem;
+  }
+  aside .close span {
+    font-size: 2rem;
+  }
+}

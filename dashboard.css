@@ -1,0 +1,77 @@
+main {
+  margin-top: 1.2rem;
+}
+main .date {
+  display: inline-block;
+  color: var(--dark-orange);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+  border-radius: 10px;
+  padding: 0.6rem 1.8rem;
+}
+main .date input[type="date"] {
+  background: transparent;
+  color: white;
+}
+main .insights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+main .insights > div {
+  background: white;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+  padding: 1rem;
+  margin-top: 1rem;
+  padding-left: 0.9rem;
+  text-align: left;
+  width: 230px;
+  border-radius: 20px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .insights .insight_icon {
+  display: flex;
+}
+main .insights > div:hover {
+  box-shadow: none;
+}
+.insights div span {
+  /* background: var(--blue-gradient);
+     */
+  color: white;
+  padding: 1rem;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+}
+.insights div.total_visits span {
+  background: linear-gradient(
+    45deg,
+    var(--dark-orange) 30%,
+    var(--light-orange) 90%
+  );
+}
+.insights div.art_gallery span {
+  background: var(--success);
+}
+/* ======MEDIA QUERIES FOR TABLET ===== */
+
+@media screen and (max-width: 1200px) {
+  main .insights {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  main {
+    margin-top: 5.2rem;
+  }
+  main .insights > div {
+    /* padding-left: 20em; */
+    width: 94%;
+  }
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artallinson</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./aside.css" />
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link rel="stylesheet" href="./recentuploads.css" />
+    <link rel="stylesheet" href="./right.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top blue-gradient">
+          <div class="logo">
+            <img src="./images/artlas_logo.png" alt="logo" height="25" />
+          </div>
+          <div class="close red-gradient" id="close-btn">
+            <span class="material-symbols-outlined"> close </span>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <a href="#">
+            <span class="material-symbols-outlined"> dashboard </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="#">
+            <span class="material-symbols-outlined"> hail </span>
+            <h3>Customers</h3>
+          </a>
+          <a href="#">
+            <span class="material-symbols-outlined"> rate_review </span>
+            <h3>Blog</h3>
+          </a>
+          <a href="#">
+            <span class="material-symbols-outlined"> work </span>
+            <h3>About us</h3>
+          </a>
+          <a href="#">
+            <span class="material-symbols-outlined"> browse_gallery </span>
+            <h3>Gallery</h3>
+          </a>
+          <a href="#">
+            <span class="material-symbols-outlined"> museum </span>
+            <h3>Exhibition</h3>
+          </a>
+          <a href="#">
+            <span class="material-symbols-outlined">
+              connect_without_contact
+            </span>
+            <h3>Contact</h3>
+          </a>
+          <a href="#" class="active">
+            <span class="material-symbols-outlined"> logout </span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+      <main>
+        <h1>Dashboard</h1>
+        <div class="date">
+          <input type="date" name="" id="" />
+        </div>
+        <div class="insights">
+          <div class="total_users">
+            <div class="insight_icon">
+              <span class="material-symbols-outlined"> group </span>
+            </div>
+
+            <h3>Total Number of Users</h3>
+            <h1>121</h1>
+          </div>
+          <div class="total_visits">
+            <div>
+              <span class="material-symbols-outlined"> tour </span>
+            </div>
+            <h3>Total Visits</h3>
+            <h1>221</h1>
+          </div>
+          <div class="art_gallery">
+            <div>
+              <span class="material-symbols-outlined">
+                network_intelligence
+              </span>
+            </div>
+            <h3>Arts in Gallery</h3>
+            <h1>21</h1>
+          </div>
+        </div>
+        <div class="recent-uploads">
+          <h2>Recent Uploads to Gallery</h2>
+          <div class="recent-section">
+            <div class="recent-card">
+              <img src="./images/colorful.jpg" alt="img" />
+              <h2>Colorful Design</h2>
+              <div>
+                <span class="material-symbols-outlined">
+                  keyboard_arrow_down
+                </span>
+              </div>
+            </div>
+            <div class="recent-card">
+              <img src="./images/young-woman.jpg" alt="img" />
+              <h2>Black painting woman</h2>
+              <div>
+                <span class="material-symbols-outlined">
+                  keyboard_arrow_down
+                </span>
+              </div>
+            </div>
+            <div class="recent-card">
+              <img src="./images/black-paint.jpg" alt="img" />
+              <h2>Black painting</h2>
+              <div>
+                <span class="material-symbols-outlined">
+                  keyboard_arrow_down
+                </span>
+              </div>
+            </div>
+            <div class="recent-card">
+              <img src="./images/lion.jpg" alt="img" />
+              <h2>Lion Design</h2>
+              <div>
+                <span class="material-symbols-outlined">
+                  keyboard_arrow_down
+                </span>
+              </div>
+            </div>
+            <div class="recent-card">
+              <img src="./images/black-paint.jpg" alt="" />
+              <h2>Black art</h2>
+              <div>
+                <span class="material-symbols-outlined">
+                  keyboard_arrow_down
+                </span>
+              </div>
+            </div>
+
+            <div class="recent-card">
+              <img src="./images/colorful.jpg" alt="img" />
+              <h2>Colorful art</h2>
+              <div>
+                <span class="material-symbols-outlined">
+                  keyboard_arrow_down
+                </span>
+              </div>
+            </div>
+          </div>
+          <button class="orange-gradient">MORE</button class="red-gradient">
+        </div>
+        <!-- END OF RECENT UPLOADS -->
+      </main>
+      <!-- END OF MAIN -->
+      <div class="right">
+        <div class="top">
+          <button id="menu-btn" class="blue-gradient">
+            <span class="material-symbols-outlined active"> sort </span>
+          </button>
+          <div class="theme-toggler">
+            <span class="material-symbols-outlined active"> light_mode </span>
+            <span class="material-symbols-outlined"> dark_mode </span>
+          </div>
+          <div class="profile">
+            <div class="info">
+              <p>Hey, <b>Thelma</b></p>
+              <small class="text-muted">Admin</small>
+            </div>
+            <div class="profile-photo">
+              <img src="./images/profile.png" alt="ds" />
+            </div>
+          </div>
+        </div>
+        <!-- END OF TOP -->
+        <div class="recent-updates">
+          <h2>Recent Activity</h2>
+          <div class="updates">
+            <div class="update">
+              <div class="profile-photo">
+                <img src="./images/profile.png" alt="ds" />
+              </div>
+              <div class="message">
+                Updated your profile pics
+                <small class="text-muted">2 minutes ago</small>
+              </div>
+            </div>
+            <div class="update">
+              <div class="profile-photo">
+                <img src="./images/profile.png" alt="ds" />
+              </div>
+              <div class="message">
+                Updated your profile pics
+                <small class="text-muted">2 minutes ago</small>
+              </div>
+            </div>
+            <div class="update">
+              <div class="profile-photo">
+                <img src="./images/lion.jpg" alt="ds" />
+              </div>
+              <div class="message">
+                Updated a galler information
+                <small class="text-muted">2 minutes ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END OF RECENT UPDATES -->
+        <div class="recent-updates">
+            <h2>MY PROFILE</h2>
+            <div class="updates">
+              <div class="update">
+                <div class="profile-photo">
+                  <img src="./images/profile.png" alt="ds" />
+                </div>
+                <div class="message">
+                 Arinze Hills
+                  <br><small class="text-muted">Admin</small>
+                </div>
+              </div>
+            <h3>ABOUT ME</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque dui justo, et ultrices leo iaculis eget.
+                 Sed convallis elit eu pretium congue. Maecenas feugiat commodo purus</p>
+            <h3 style="padding: 1rem 0 0.4rem;">CONTACT</h3>
+            <p><b>Email:</b> arinzehill@gmail.com</p>
+            <p><b>Tel:</b> arinzehill@gmail.com</p>
+            <p><b>Address:</b> arinzehill@gmail.com</p>
+            
+                </div>
+          </div>
+          <!-- END OF PROFILE DESC -->
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
