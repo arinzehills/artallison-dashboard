@@ -2,7 +2,8 @@ aside {
   /* background: var(--info-light); */
   background: white;
   height: 100vh;
-  position: static;
+  /* position: fixed;
+  margin-left: 10rem; */
 }
 aside .top {
   display: flex;
