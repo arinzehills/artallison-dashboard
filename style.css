@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:ital,wght@0,500;1,400&display=swap");
 :root {
+  --color-white: #fff;
   --blue: #2196f3;
   --light-blue: #21cbf3;
   --light-purple: #6500ff;
@@ -7,10 +8,14 @@
   --light-orange: #ffc12a;
   --dark-orange: #ff8304;
   --danger: #ff7782;
+  --card-padding: 1.8rem;
+  --card-border-radius: 2rem;
+  --color-dark: #191a1a;
+  --color-dark-variant: #242629;
   --success: #41f1b6;
-  --info-dark: #7d8da1;
+  --info-dark: #788089;
   --info-light: #dce1eb;
-  --light: rgba(255, 255, 255);
+  --light: rgba(132, 139, 200, 0.18);
   --box-shadow: 0 2rem 3rem var(--light);
   --color-background: #e8f4fb;
   --blue-gradient: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
@@ -20,10 +25,12 @@
   --color-background: #181a1e;
   --color-white: #202528;
   --color-dark: #edeffd;
-  --color-dark-variant: #a3bdcc;
+  --color-dark-variant: #e9f1f5;
   --light: rgba(0, 0, 0, 0.4);
   --color-background: #181a1e;
-  --box-shadow: 0 2rem 3rem var(--color-light);
+  --box-shadow: 0 2rem 3rem var(--light);
+  --info-dark: #f3f5f8;
+  --info-light: #3c3c3c;
 }
 * {
   margin: 0;
@@ -41,7 +48,7 @@ body {
   user-select: none;
   overflow-x: hidden;
   background: var(--color-background);
-  /* color: var(--light); */
+  color: var(--color-dark);
 }
 .container {
   display: grid;
@@ -50,17 +57,32 @@ body {
   font-family: "PT Sans", sans-serif;
   gap: 1.8rem;
   margin: 0 auto;
-  grid-template-columns: 14rem auto 20rem;
+  grid-template-columns: 14rem auto;
+  /* grid-template-columns: 14rem auto 20rem; */
   /* font-family: 'Anton', sans-serif;
 font-family: 'PT Sans', sans-serif;
 font-family: 'Rubik', sans-serif; */
 }
+.container section.show {
+  display: grid;
+  grid-template-columns: auto 20rem;
+  margin-left: 16rem;
+  margin-top: 1rem;
+}
+
+section {
+  display: none;
+}
+
 a {
   color: rgb(34, 33, 33);
 }
 img {
   width: 100%;
   display: block;
+}
+p {
+  color: var(--color-dark-variant);
 }
 h1 {
   font-weight: 800;
@@ -77,6 +99,38 @@ h4 {
 }
 h5 {
   font-size: 0.75rem;
+}
+button {
+  background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+  /* padding: 0.8rem; */
+  border-radius: 10px;
+  min-width: 90px;
+  height: 40px;
+  color: white;
+}
+
+button.outline {
+  background: var(--color-white);
+  color: #2196f3;
+  border: 1.4px solid #2196f3;
+}
+button.outline.red-outline {
+  color: var(--dark-orange);
+  border: 1.4px solid var(--danger);
+}
+input {
+  border: 1.4px solid #2196f3;
+  height: 35px;
+  width: 200px;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+textarea {
+  border: 1.4px solid #2196f3;
+
+  border-radius: 10px;
+  margin: 1rem 0 1rem;
+  padding-left: 10px;
 }
 .profile-photo {
   width: 2.8rem;
@@ -117,7 +171,12 @@ h5 {
 @media screen and (max-width: 1200px) {
   .container {
     width: 94%;
-    grid-template-columns: 7rem auto 20rem;
+    /* grid-template-columns: 7rem auto 20rem; */
+    grid-template-columns: 7rem auto;
+  }
+  .container section.show {
+    grid-template-columns: 20rem 19rem;
+    margin-left: 10rem;
   }
   .aside .logo {
     display: none;
@@ -130,5 +189,15 @@ h5 {
     justify-content: center;
     align-items: center;
     /* background: rgb(255, 255, 255); */
+  }
+  .container section.show {
+    grid-template-columns: 1fr;
+    /* display: flex; */
+    margin-left: 1rem;
+
+    /* flex-direction: column; */
+  }
+  input {
+    /* width: 300px; */
   }
 }

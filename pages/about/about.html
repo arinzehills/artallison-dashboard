@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .about-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background: red; */
+        width: 75vw;
+        flex-direction: column;
+      }
+      .about-container {
+        background-color: var(--color-white);
+        box-shadow: var(--box-shadow);
+        width: 100%;
+        /* flex-direction: column;
+        display: flex; */
+        /* display: grid;
+        grid-template-columns: 19rem auto; */
+        justify-content: space-between;
+        padding: var(--card-padding);
+        margin-top: 1rem;
+        border-radius: var(--card-border-radius);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <page-title pageTitle="About us"></page-title>
+      <profile-component pageTitle="Settings"></profile-component>
+    </div>
+    <div class="about-section">
+      <div class="about-container">
+        <div>
+          <h2>About</h2>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Enter Your Biography"
+          ></textarea>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Enter Your Biography"
+          ></textarea
+          ><br />
+          <button class="red-gradient">Save</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

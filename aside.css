@@ -1,9 +1,11 @@
 aside {
   /* background: var(--info-light); */
-  background: white;
+  background: var(--color-white);
   height: 100vh;
-  /* position: fixed;
-  margin-left: 10rem; */
+  width: 220px;
+  position: fixed;
+  z-index: 10;
+  /* margin-left: 10rem; */
 }
 aside .top {
   display: flex;
@@ -54,7 +56,8 @@ aside .sidebar a.active:before {
   width: 6px;
   height: 100%;
   /* background-color: var(--dark-purple); */
-  background: white;
+  /* background: var(--light-purple); */
+  background: linear-gradient(45deg, var(--dark-orange) 30%, var(--danger) 90%);
 }
 aside .sidebar a.active span {
   /* color: ; */
@@ -72,6 +75,10 @@ aside .close {
 }
 /* ======MEDIA QUERIES ===== */
 @media screen and (max-width: 1200px) {
+  aside {
+    width: auto;
+    margin-left: -2rem;
+  }
   aside h3 {
     display: none;
   }
@@ -89,6 +96,8 @@ aside .close {
     box-shadow: 1rem 3rem 4rem #ccc;
     height: 100vh;
     display: none;
+    margin-left: 0;
+
     animation: showMenu 800ms ease-in forwards;
   }
   @keyframes showMenu {

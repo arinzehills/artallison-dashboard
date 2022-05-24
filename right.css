@@ -1,6 +1,6 @@
 .right {
   margin-top: 1.4rem;
-  margin-left: -1rem;
+  margin-left: 1rem;
 }
 .right .top {
   display: flex;
@@ -8,13 +8,15 @@
   gap: 2rem;
   right: 5em;
   position: relative;
+  /* background: red; */
 }
 
 .right .top button {
   display: none;
 }
 .right .theme-toggler {
-  background: white;
+  background: var(--color-white);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,7 +55,7 @@
   margin-bottom: 0.8rem;
 }
 .right .recent-updates .updates {
-  background: white;
+  background: var(--color-white);
   padding: 1rem;
   border-radius: 20px;
   box-shadow: var(--box-shadow);
@@ -69,15 +71,28 @@
   gap: 1rem;
   margin-bottom: 1rem;
 }
+/* FOR MID SIZE TABS SCREENS */
+@media screen and (max-width: 1200px) {
+  .right {
+    /* display: none; */
+  }
+  .right .recent-updates .updates {
+    width: 110%;
+  }
+  .right .top {
+    right: 0;
+  }
+}
 @media screen and (max-width: 768px) {
   .right {
     width: 100%;
     margin: 0 auto 4rem;
   }
   .right .top {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
+    /* right: 15rem; */
     align-items: center;
     padding: 0 0.8rem;
     height: 4.6rem;
@@ -86,6 +101,9 @@
     margin: 0;
     z-index: 2;
     box-shadow: 0 1rem 1rem rgb(235, 233, 233);
+  }
+  .right .recent-updates .updates {
+    width: 95%;
   }
   .right .theme-toggler {
     width: 4.4rem;

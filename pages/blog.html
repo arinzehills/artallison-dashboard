@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .blog-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background: red; */
+        width: 75vw;
+        flex-direction: column;
+      }
+      .blog-container {
+        background: var(--color-white);
+        box-shadow: var(--box-shadow);
+        width: 100%;
+        padding: var(--card-padding);
+        margin-top: 1rem;
+        border-radius: var(--card-border-radius);
+      }
+      .blog-container input {
+        width: 100%;
+        height: 50px;
+        margin: 0.4rem 0 1rem;
+      }
+      .blog-container textarea {
+        width: 100%;
+      }
+      .image-wrapper {
+        border: dashed 2px var(--blue);
+        border-radius: 10px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.5rem;
+        flex-direction: column;
+      }
+      .image-wrapper span {
+        font-size: 4rem;
+        color: var(--info-dark);
+      }
+    </style>
+  </head>
+  <body>
+    <page-title pageTitle="Blog Post"></page-title>
+    <div class="blog-section">
+      <div class="blog-container">
+        <h2>Create new blog post</h2>
+        <p class="text-muted" style="margin-top: 1rem">Blog Title</p>
+        <input type="text" placeholder="Enter blog title" />
+        <p class="text-muted" style="margin-top: 0rem">SEO Keywords</p>
+        <input type="text" placeholder="Enter blog title" />
+        <p class="text-muted" style="margin-top: 0rem">Upload Featured Image</p>
+        <div class="image-wrapper">
+          <span class="material-symbols-outlined"> image </span>
+          <div
+            style="display: flex; flex-direction: column; align-items: center"
+            class="text-muted"
+          >
+            <button>Browse</button>
+            or drop your image here
+          </div>
+        </div>
+        <p class="text-muted" style="margin-top: 0rem">Description</p>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <div class="settings-button" style="left: 100%">
+          <button class="outline">Save as Draft</button>
+          <button>Publish</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

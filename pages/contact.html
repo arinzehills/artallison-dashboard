@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <style>
+      .settings-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background: red; */
+        width: 75vw;
+        flex-direction: column;
+      }
+      .profile-photo span {
+        font-size: 1em;
+        position: absolute;
+        /* top: 0; */
+        margin-top: -3rem;
+        left: 12rem;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+      }
+      /* .top:last-child {
+        right: 20rem;
+        position: absolute;
+        display: none;
+      } */
+      .settings-container {
+        background-color: var(--color-white);
+        box-shadow: var(--box-shadow);
+        width: 100%;
+        display: grid;
+        grid-template-columns: 19rem auto;
+        justify-content: space-between;
+        padding: var(--card-padding);
+        margin-top: 1rem;
+        border-radius: var(--card-border-radius);
+      }
+      .settings-container > div > div > div {
+        column-gap: 3rem;
+      }
+      .input-wrapper {
+        /* flex-wrap: wrap; */
+        display: flex;
+        padding-top: 1rem;
+        gap: 0.5rem;
+      }
+      @media screen and (max-width: 1200px) {
+        .settings-container {
+        }
+        .input-wrapper {
+          display: grid;
+          grid-template-columns: repeat(2, 2fr);
+        }
+      }
+      @media screen and (max-width: 768px) {
+        .settings-container {
+          grid-template-columns: 1fr;
+        }
+        .input-wrapper {
+          flex-wrap: wrap;
+          display: flex;
+        }
+      }
+      .settings-container textarea {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <page-title pageTitle="Edit contact info"></page-title>
+      <profile-component pageTitle="Settings"></profile-component>
+    </div>
+    <div class="settings-section">
+      <div
+        class="settings-container"
+        style="display: flex; flex-direction: column"
+      >
+        <h2>Enter a brief details for the contact page</h2>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+      </div>
+      <div class="settings-container">
+        <div style="display: flex; flex-direction: column">
+          <h2>Contact info</h2>
+          <div class="input-wrapper" style="">
+            <!-- houses the input and label fields -->
+            <div>
+              <h3>Email</h3>
+              <input type="text" name="email" id="" placeholder="Enter email" />
+            </div>
+            <div>
+              <h3>Telephone</h3>
+              <input
+                type="text"
+                name="tel"
+                id=""
+                placeholder="Enter phone number"
+              />
+            </div>
+            <div>
+              <h3>Address</h3>
+              <input
+                type="text"
+                name="Address"
+                id=""
+                placeholder="Enter address"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="settings-button">
+          <button class="outline red-outline">Cancel</button>
+          <button class="red-gradient">Save</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -13,7 +13,7 @@
 }
 .recent-card {
   box-shadow: var(--box-shadow);
-  background: white;
+  background: var(--color-white);
   max-width: 230px;
   padding: 1rem 0 1rem;
   border-radius: 20px;
@@ -58,15 +58,19 @@
   border-radius: 2rem;
   width: 10rem;
 }
+/* FOR MID SIZE SCREENs */
 @media screen and (max-width: 1200px) {
   .recent-uploads {
     position: absolute;
     width: 94%;
-    left: 50%;
+    left: 60%;
     transform: translate(-50%);
     /* margin: 2rem 0 0 8.8rem; */
+    margin-top: 3.6rem;
   }
 }
+/* FOR SMALL SIZE SCREENs */
+
 @media screen and (max-width: 768px) {
   .recent-uploads {
     position: relative;
