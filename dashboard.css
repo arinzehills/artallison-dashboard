@@ -6,7 +6,7 @@ main {
   color: var(--dark-orange);
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+  background: linear-gradient(45deg, var(--blue) 30%, var(--light-blue) 90%);
   border-radius: 10px;
   padding: 0.6rem 1.8rem;
 }
@@ -47,7 +47,7 @@ main .insights > div:hover {
   color: white;
   padding: 1rem;
   border-radius: 50%;
-  background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+  background: linear-gradient(45deg, var(--blue) 30%, var(--light-blue) 90%);
 }
 .insights div.total_visits span {
   background: linear-gradient(
