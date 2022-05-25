@@ -63,7 +63,10 @@
 
     <div class="gallery-section">
       <div class="gallery-container">
-        <div class="upload-container">
+        <div class="upload-container" id="upload-container"
+        >
+        <!-- ondrop="upload_file(event)"  -->
+        <!-- ondragover="return false" -->
           <div class="blue-gradient file_upload" style="">
             <span class="material-symbols-outlined" style="font-size: 5rem">
               photo_library
@@ -71,7 +74,10 @@
           </div>
           <p style="margin-top: 1rem">Drag and Drop Image</p>
           <small>or</small>
-          <button style="margin-top: 1rem">Browse</button>
+          <button style="margin-top: 1rem" id="browse_file" 
+          
+          >Browse</button>
+          <!-- onclick="file_explorer();" -->
         </div>
         <div class="upload-detail">
           <input type="text" placeholder="Enter Title" />

@@ -87,43 +87,63 @@
         style="display: flex; flex-direction: column"
       >
         <h2>Enter a brief details for the contact page</h2>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-        <button class="red-gradient" style="width: 150px">save</button>
+        <div id="description_message"></div>
+        <form action="">
+
+          <textarea name="description" id="description" cols="30" rows="10" class="form_data" 
+          required
+          >
+  
+          </textarea>
+          <button class="red-gradient" style="width: 150px" id="submit_desc"
+          onclick="save_contact_desc(); return false;"
+          >save</button>
+        </form>
       </div>
       <div class="settings-container">
-        <div style="display: flex; flex-direction: column">
-          <h2>Contact info</h2>
-          <div class="input-wrapper" style="">
-            <!-- houses the input and label fields -->
-            <div>
-              <h3>Email</h3>
-              <input type="text" name="email" id="" placeholder="Enter email" />
-            </div>
-            <div>
-              <h3>Telephone</h3>
-              <input
-                type="text"
-                name="tel"
-                id=""
-                placeholder="Enter phone number"
-              />
-            </div>
-            <div>
-              <h3>Address</h3>
-              <input
-                type="text"
-                name="Address"
-                id=""
-                placeholder="Enter address"
-              />
+        <form action="">
+          <div style="display: flex; flex-direction: column">
+            <h2>Contact info</h2>
+            <div id="contact_details_message"></div>
+            <div class="input-wrapper" style="">
+              <!-- houses the input and label fields -->
+              <div>
+                <h3>Email</h3>
+                <input type="text" name="email" id="" placeholder="Enter email" class="form_data"/>
+              </div>
+              <div>
+                <h3>Telephone</h3>
+                <input
+                  type="text"
+                  name="tel"
+                  id=""
+                  placeholder="Enter phone number"
+                  class="form_data"
+                />
+              </div>
+              <div>
+                <h3>Address</h3>
+                <input
+                  type="text"
+                  name="Address"
+                  id=""
+                  placeholder="Enter address"
+                  class="form_data"
+                />
+              </div>
             </div>
           </div>
+          <div class="settings-button">
+            <button class="outline red-outline">Cancel</button>
+            <button class="red-gradient" id="submit_contact_details" 
+            onclick="save_contact_details(); return false;">Save</button>
+          </div>
         </div>
-        <div class="settings-button">
-          <button class="outline red-outline">Cancel</button>
-          <button class="red-gradient">Save</button>
-        </div>
-      </div>
+            
+        </form>
     </div>
   </body>
+  <script>
+
+  </script>
 </html>

@@ -101,7 +101,7 @@
           
         </div>
       </aside>
-      <section class="dashboard show">
+      <section class="dashboard ">
         <main>
           <page-title></page-title>
           <dashboard-component></dashboard-component>
@@ -184,11 +184,11 @@
         <div w3-include-html="./pages/blog.html"></div>  
         
       </section>
-      <section class="about">
+      <section class="about ">
         <div w3-include-html="./pages/about/about.html"></div>  
-
+        <!-- <?php include 'pages/about/about.php' ?> -->
       </section>
-      <section class="gallery ">
+      <section class="gallery show">
         <div w3-include-html="./pages/gallery.html"></div>  
         
       </section>
@@ -208,6 +208,10 @@
     <!-- <script src="./pages/settings/settings.html"></script> -->
     <script src="./components/pageTitle.js"></script>
     <script src="./components/profile.js"></script>
+    <!-- from here is the functionalies of various pages javascript files -->
+    <script src="./js/about.js"></script>
+   
+    <script src="./js/contact.js"></script>
     <script>
       
         const anchorTagsList = Array.from(document.querySelectorAll('a'));
@@ -233,5 +237,7 @@
         }))
         includeHTML();
     </script>
+     <!-- <script src="./js/file.js" ></script> -->
+     <script src="./js/upload.js" defer></script>
   </body>
 </html>
