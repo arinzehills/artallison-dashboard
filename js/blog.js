@@ -120,9 +120,7 @@ function ajax_blog_upload(file_obj) {
     var form_data = new FormData();
     form_data.append("file", file_obj);
 
-    // for (var count = 0; count < form_element.length; count++) {
-    //   form_data.append(form_element[count].name, form_element[count].value);
-    // }
+    //
     console.log(form_data);
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "./blog.php", true);
