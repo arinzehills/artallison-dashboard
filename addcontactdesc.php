@@ -6,7 +6,7 @@ $errors=array('description'=>'',);
     $data=array(
         ':description'=>$_POST["description"],
     );
-
+    print_r( $errors);
     if(empty($_POST["description"])){
         $errors['description']='Need to input some details';
     }
@@ -17,7 +17,7 @@ $errors=array('description'=>'',);
     }else{
 
         $query="
-        SELECT * FROM contact_info 
+        SELECT * FROM contact_description
         ";
         
         $statement =$connect->prepare($query);
@@ -28,7 +28,7 @@ $errors=array('description'=>'',);
         if($result[0]> 1){
             //data exists
             $query="
-                UPDATE contact_info
+                UPDATE contact_description
                 
                 SET description=:description
                 ";
@@ -41,7 +41,7 @@ $errors=array('description'=>'',);
         >Data Updated successfully</div>';
         }else{
             $query="
-                INSERT INTO contact_info
+                INSERT INTO contact_description
                 (description) VALUES(:description)
                 ";
             $statement =$connect->prepare($query);

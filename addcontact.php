@@ -4,9 +4,9 @@ $connect =new PDO("mysql:host=localhost;dbname=artallison",'root', "");
 $errors=array('email'=>'',);
 
     $data=array(
-        ':email'=>$_POST["description"],
-        ':tel'=>$_POST["description"],
-        ':address'=>$_POST["description"],
+        ':email'=>$_POST["email"],
+        ':tel'=>$_POST["tel"],
+        ':address'=>$_POST["address"],
         // ':description'=>$_POST["description"],
     );
 
