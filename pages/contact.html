@@ -88,16 +88,16 @@
       >
         <h2>Enter a brief details for the contact page</h2>
         <div id="description_message"></div>
-        <form action="">
+        <form action="" id="contact_desc_form"
+         onsubmit="validate_desc(); return false;">
 
-          <textarea name="description" id="description" cols="30" rows="10" class="form_data" 
-          required
-          >
-  
-          </textarea>
+          <textarea name="description" id="description" cols="30" rows="10" class="form_data"
+           placeholder="type here.."></textarea>
           <button class="red-gradient" style="width: 150px" id="submit_desc"
-          onclick="save_contact_desc(); return false;"
+          
           >save</button>
+          <!-- onclick="validate_desc();
+           return false;" -->
         </form>
       </div>
       <div class="settings-container">

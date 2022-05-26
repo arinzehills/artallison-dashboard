@@ -16,7 +16,7 @@ $errors=array('biography'=>'','statement'=>'',);
     }
     if(array_filter($errors)){
         echo '<div class="success"
-                style="background:red;padding:1rem;border-radius:10px">
+                style="background:var(--danger);padding:1rem;border-radius:10px">
                 Please input required details </div>';
     }else{
 

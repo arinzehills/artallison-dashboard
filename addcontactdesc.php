@@ -6,13 +6,12 @@ $errors=array('description'=>'',);
     $data=array(
         ':description'=>$_POST["description"],
     );
-    print_r( $errors);
     if(empty($_POST["description"])){
         $errors['description']='Need to input some details';
     }
     if(array_filter($errors)){
         echo '<div class="success"
-                style="background:red;padding:1rem;border-radius:10px">
+                style="background:var(--danger);padding:1rem;border-radius:10px">
                 Please input required details </div>';
     }else{
 

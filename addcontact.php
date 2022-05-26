@@ -16,7 +16,7 @@ $errors=array('email'=>'',);
     $comma_separated =$errors['email'] ;
     if(array_filter($errors)){
         echo "<div class='success'
-                style='background:red;padding:1rem;border-radius:10px'>
+                style='background:var(--danger);padding:1rem;border-radius:10px'>
                 $comma_separated
                 </div>";
     }else{

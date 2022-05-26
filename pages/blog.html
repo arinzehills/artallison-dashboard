@@ -44,6 +44,9 @@
         font-size: 4rem;
         color: var(--info-dark);
       }
+      .isoverarea {
+        opacity: 0.4;
+      }
     </style>
   </head>
   <body>
@@ -51,26 +54,49 @@
     <div class="blog-section">
       <div class="blog-container">
         <h2>Create new blog post</h2>
+        <div id="blog_message"></div>
         <p class="text-muted" style="margin-top: 1rem">Blog Title</p>
-        <input type="text" placeholder="Enter blog title" />
-        <p class="text-muted" style="margin-top: 0rem">SEO Keywords</p>
-        <input type="text" placeholder="Enter blog title" />
+        <input
+          name="title"
+          type="text"
+          placeholder="Enter blog title"
+          class="blog_form"
+          id="blog_title"
+        />
+        <!-- <p class="text-muted" style="margin-top: 0rem">SEO Keywords</p>    
+        <input type="text" placeholder="Enter blog title" /> -->
         <p class="text-muted" style="margin-top: 0rem">Upload Featured Image</p>
-        <div class="image-wrapper">
+        <div
+          class="image-wrapper"
+          ondragleave="dragBlogLeave();"
+          ondragover="dragBlogOver(event);"
+          ondrop="dropBlog(event); return false;"
+        >
           <span class="material-symbols-outlined"> image </span>
           <div
             style="display: flex; flex-direction: column; align-items: center"
             class="text-muted"
           >
-            <button>Browse</button>
-            or drop your image here
+            <button onclick="browseBlog();">Browse</button>
+            <span style="font-size: 17px" id="blog_p"
+              >or drop your image here</span
+            >
           </div>
         </div>
         <p class="text-muted" style="margin-top: 0rem">Description</p>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <div id="blog_desc_error"></div>
+        <textarea
+          name="description"
+          id="blog_description"
+          cols="30"
+          rows="10"
+          class="blog_form"
+        ></textarea>
         <div class="settings-button" style="left: 100%">
-          <button class="outline">Save as Draft</button>
-          <button>Publish</button>
+          <button class="outline" onclick="validateBlogGallery()">
+            Save as Draft
+          </button>
+          <button onclick="validateBlogGallery()">Publish</button>
         </div>
       </div>
     </div>

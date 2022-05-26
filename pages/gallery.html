@@ -57,30 +57,54 @@
       width: 80%;
       margin-left: 0;
     }
+    .isoverarea {
+      opacity: 0.4;
+    }
   </style>
   <body>
     <page-title pageTitle="Edit Gallery"></page-title>
 
     <div class="gallery-section">
       <div class="gallery-container">
-        <div class="upload-container" id="upload-container"
+        <div
+          class="upload-container"
+          id="upload-container"
+          ondragleave="dragLeave()"
+          ondragover="dragOver(event);"
+          ondrop="drop(event); return false;"
         >
-        <!-- ondrop="upload_file(event)"  -->
-        <!-- ondragover="return false" -->
-          <div class="blue-gradient file_upload" style="">
+          <!-- ondrop="upload_file(event)"  -->
+          <!-- ondragover="return false" -->
+          <div
+            class="blue-gradient file_upload"
+            style=""
+            id="file_upload"
+            onload="drop(event)"
+          >
             <span class="material-symbols-outlined" style="font-size: 5rem">
               photo_library
             </span>
           </div>
-          <p style="margin-top: 1rem">Drag and Drop Image</p>
+          <p style="margin-top: 1rem" id="drap_p">Drag and Drop Image</p>
           <small>or</small>
-          <button style="margin-top: 1rem" id="browse_file" 
-          
-          >Browse</button>
+          <button
+            style="margin-top: 1rem"
+            id="browse_gallery"
+            onclick="browseGallery();"
+          >
+            Browse
+          </button>
+          <input type="file" id="browse_input" hidden />
           <!-- onclick="file_explorer();" -->
         </div>
         <div class="upload-detail">
-          <input type="text" placeholder="Enter Title" />
+          <div id="gallery_message"></div>
+          <input
+            type="text"
+            name="title"
+            id="gallery_title"
+            placeholder="Enter Title"
+          />
           <textarea
             name=""
             id=""
@@ -91,11 +115,14 @@
           <button
             class="red-gradient"
             style="display: flex; align-items: center; justify-content: center"
+            onclick="validateGallery()"
           >
-            Upload <span class="material-symbols-outlined"> file_upload </span>
+            Upload
+            <span class="material-symbols-outlined"> file_upload </span>
           </button>
         </div>
       </div>
     </div>
+    <script src="../js/upload.js" defer></script>
   </body>
 </html>
