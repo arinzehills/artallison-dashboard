@@ -1,13 +1,13 @@
 <?php
 
 $connect =new PDO("mysql:host=localhost;dbname=artallison",'root', "");
-$errors=array('name'=>'',);
+$errors=array('name'=>'');
 
     $data=array(
         ':name'=>$_POST["name"],
         ':email'=>$_POST["email"],
         ':tel'=>$_POST["tel"],
-        ':address'=>$_POST["address"],
+        ':address'=>$_POST["address"]
         // ':description'=>$_POST["description"],
     );
 
