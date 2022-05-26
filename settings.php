@@ -7,7 +7,7 @@ $errors=array('email'=>'',);
     //     ':name'=>$_POST["name"],
     //     ':email'=>$_POST["email"],
     //     ':tel'=>$_POST["tel"],
-    //     ':address'=>$_POST["addressfd"],
+    //     ':address'=>$_POST["addressfd"], 
     //     // ':description'=>$_POST["description"],
     // );
 
