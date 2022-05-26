@@ -1,9 +1,11 @@
 <?php 
+$connect =new PDO("mysql:host=localhost;dbname=artallison",'root', "");
 
-    // if(!is_dir('uploads')){
+    if(!file_exists('uploads')){
         
-    //     mkdir('./uploads')
-    // }   else{
+        mkdir('uploads');
+    }  
+    //  else{
     //     echo ' directo exits'
     // }
     /* define project root directory */
@@ -12,14 +14,24 @@
 // define('UPLOAD_DIRECTORY', 'uploads/');
 
 // Check file size
-if ($_FILES["file"]["size"] > 500000) {
+if ($_FILES["file"]["size"] > 5000000) {
     die("Uploaded file is too large.");
 }
-$feedBack=array();
+$data=array(
+    ':title'=>$_POST["title"],
+    ':description'=>$_POST["description"],
+    ':file'=>$_FILES['file']['name'],
+);
 
-if (move_uploaded_file($_FILES["file"]["tmp_name"], 'uploads'.$filename)) {
-    // $feedBack[0]=$_FILES['file']['name'];
-    // $feedBack[1]="The file " . basename($_FILES["file"]["name"]) . " has been uploaded.";
+$filename= $_FILES['file']['name'];
+
+if (move_uploaded_file($_FILES["file"]["tmp_name"], 'uploads/'.$filename)) {
+    $query="
+    INSERT INTO gallery_data
+    (title,description,image) VALUES(:title,:description,:file)
+    ";
+    $statement =$connect->prepare($query);
+    $statement ->execute($data);
 
     echo "The file " . basename($_FILES["file"]["name"]) . " has been uploaded.";
 } else {

@@ -96,8 +96,13 @@ function ajax_gallery_upload(file_obj) {
   //   e.preventDefault();
 
   if (file_obj != undefined) {
+    var form_element = document.getElementsByClassName("gallery_form");
+
     var form_data = new FormData();
     form_data.append("file", file_obj);
+    for (var count = 0; count < form_element.length; count++) {
+      form_data.append(form_element[count].name, form_element[count].value);
+    }
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "./upload_to_gallery.php", true);
     xhttp.onload = function (event) {
@@ -110,9 +115,9 @@ function ajax_gallery_upload(file_obj) {
         dropText.innerHTML = `<div class="success"
             style="background:var(--success);padding:1rem;border-radius:10px">
             ${this.responseText} </div>`;
-        setTimeout(function () {
-          dropText.innerHTML = "";
-        }, 3500);
+        // setTimeout(function () {
+        //   dropText.innerHTML = "";
+        // }, 3500);
       } else {
         dropText.innerText = `Error ${xhttp.status} occured`;
       }
