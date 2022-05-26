@@ -109,20 +109,20 @@ function ajax_gallery_upload(file_obj) {
       var imageArea = document.getElementById("file_upload");
       var dropText = document.getElementById("gallery_message");
 
-      if (xhttp.status == 200) {
-        // imageArea.innerHTML = `<img src="${this.responseText["filename"]}" alt="drop image">`;
+        if (xhttp.status == 200) {
+          // imageArea.innerHTML = `<img src="${this.responseText["filename"]}" alt="drop image">`;
 
-        dropText.innerHTML = `<div class="success"
-            style="background:var(--success);padding:1rem;border-radius:10px">
-            ${this.responseText} </div>`;
-        // setTimeout(function () {
-        //   dropText.innerHTML = "";
-        // }, 3500);
-      } else {
-        dropText.innerText = `Error ${xhttp.status} occured`;
-      }
-    };
-    xhttp.send(form_data);
+          dropText.innerHTML = `<div class="success"
+              style="background:var(--success);padding:1rem;border-radius:10px">
+              ${this.responseText} </div>`;
+          // setTimeout(function () {
+          //   dropText.innerHTML = "";
+          // }, 3500);
+        } else {
+          dropText.innerText = `Error ${xhttp.status} occured`;
+        }
+      };
+      xhttp.send(form_data);
   } else {
     console.log("undefendied");
   }
