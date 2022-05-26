@@ -86,16 +86,28 @@
       <div class="settings-container">
         <div style="display: flex; flex-direction: column">
           <h2>Profile Info</h2>
-          <div class="profile_info_message"></div>
+          <div id="profile_info_message"></div>
           <div class="input-wrapper" style="">
             <!-- houses the input and label fields -->
             <div>
               <h3>Name</h3>
-              <input type="text" name="name" id="" placeholder="Enter name" class="form_data"/>
+              <input
+                type="text"
+                name="name"
+                id=""
+                placeholder="Enter name"
+                class="form_data"
+              />
             </div>
             <div>
               <h3>Email</h3>
-              <input type="text" name="email" id="" placeholder="Enter email"class="form_data"/>
+              <input
+                type="text"
+                name="email"
+                id=""
+                placeholder="Enter email"
+                class="form_data"
+              />
             </div>
             <div>
               <h3>Telephone</h3>
@@ -104,7 +116,8 @@
                 name="tel"
                 id=""
                 placeholder="Enter phone number"
-              class="form_data"/>
+                class="form_data"
+              />
             </div>
             <div>
               <h3>Address</h3>
@@ -120,9 +133,13 @@
         </div>
         <div class="settings-button">
           <button class="outline red-outline">Cancel</button>
-          <button class="red-gradient" 
-          id="save_profle_info"
-          onclick="save_profile_info();">Save</button>
+          <button
+            class="red-gradient"
+            id="save_profle_info"
+            onclick="save_profile_info();"
+          >
+            Save
+          </button>
         </div>
       </div>
       <div class="settings-container">
