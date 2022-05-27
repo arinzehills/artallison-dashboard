@@ -1,43 +1,46 @@
-// function save_profile_info() {
-//     // var btn = document.getElementById("save_profle_info");
-//     var mess = document.getElementById("profile_info_message");
+function updatepassword(){
+    var btn = document.getElementById("update_password");
+  console.log(btn);
+  var form_elemen = document.getElementsByClassName("security_form");
+  form_data = new FormData();
+  console.log(form_elemen)
+  for (var count = 0; count < form_elemen.length; count++) {
+    form_data.append(form_elemen[count].name, form_elemen[count].value);
+  }
+  btn.disabled = true;
+  var ajax_request = new XMLHttpRequest();
 
-//     // console.log(btn);
-//     var form_element = document.getElementsByClassName("setting_form_data");
-//     form_data = new FormData();
-//     for (var count = 0; count < form_element.length; count++) {
-//       form_data.append(form_element[count].name, form_element[count].value);
-//     }
-//     //   document.getElementById("save_profle_info").disabled = true;
+  ajax_request.open("POST", "./securitysettings.php");
 
-//       var ajax_request = new XMLHttpRequest();
-//       ajax_request.open("POST", "./settings.php");
+  ajax_request.send(form_data);
 
-//       if (ajax_request.status == 200) {
-//         // imageArea.innerHTML = `<img src="${this.responseText["filename"]}" alt="drop image">`;
+  ajax_request.onreadystatechange = function () {   
+    if (ajax_request.readyState == 4 && ajax_request.status == 200) {
+      btn.disabled = false;
+      //   document.getElementById('about_form').reset();
+      console.log(ajax_request.responseText);
+      document.getElementById("profile_security_message").innerHTML =
+        ajax_request.responseText;
 
-//         mess.innerHTML = `<div class="success"
-//             style="background:var(--success);padding:1rem;border-radius:10px">
-//             ${this.responseText} </div>`;
-//         // setTimeout(function () {
-//         //   mess.innerHTML = "";
-//         // }, 3500);
-//       } else {
-//         mess.innerText = `Error ${ajax_request.status} occured`;
-//       }
-
-//       ajax_request.send(form_data);
-//     };
+    //   setTimeout(function () {
+    //     document.getElementById("profile_info_message").innerHTML = "";
+    //   }, 2500);
+    } else {
+      console.log(ajax_request.status);
+    }
+  };
+}
 function save_profile_info() {
   var btn = document.getElementById("save_profle_info");
   console.log(btn);
-  var form_element = document.getElementsByClassName("setting_form_data");
+  var form_elemen = document.getElementsByClassName("setting_form");
   form_data = new FormData();
+  console.log(form_elemen)
 
-  for (var count = 0; count < form_element.length; count++) {
-    form_data.append(form_element[count].name, form_element[count].value);
+  for (var count = 0; count < form_elemen.length; count++) {
+    form_data.append(form_elemen[count].name, form_elemen[count].value);
   }
-  document.getElementById("save_profle_info").disabled = true;
+  btn.disabled = true;
 
   var ajax_request = new XMLHttpRequest();
 
@@ -45,7 +48,7 @@ function save_profile_info() {
 
   ajax_request.send(form_data);
 
-  ajax_request.onreadystatechange = function () {
+  ajax_request.onreadystatechange = function () {   
     if (ajax_request.readyState == 4 && ajax_request.status == 200) {
       document.getElementById("save_profle_info").disabled = false;
       //   document.getElementById('about_form').reset();
@@ -53,9 +56,9 @@ function save_profile_info() {
       document.getElementById("profile_info_message").innerHTML =
         ajax_request.responseText;
 
-      setTimeout(function () {
-        document.getElementById("profile_info_message").innerHTML = "";
-      }, 2500);
+    //   setTimeout(function () {
+    //     document.getElementById("profile_info_message").innerHTML = "";
+    //   }, 2500);
     } else {
       console.log(ajax_request.status);
     }

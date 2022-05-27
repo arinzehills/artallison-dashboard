@@ -1,4 +1,15 @@
+<?php 
+include "db.php";
+// include "db_conn.php";
+include "sessionvisits.php";
+include "dashboardinfo.php";
+  // $query ='';
+$conn =mysqli_connect('localhost', 'root', '', 'artallison');
+  
+$total_visitors=232;
+// 
 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -101,10 +112,42 @@
           
         </div>
       </aside>
-      <section class="dashboard ">
+      <section class="dashboard show">
         <main>
           <page-title></page-title>
-          <dashboard-component></dashboard-component>
+          
+          <dashboard-component 
+          numOfUsers=<?php  echo $num_of_users; ?>
+          numInGallery=<?php  echo $arts_in_gallery; ?>
+          visits=<?php  echo count($visitors); ?>
+          ></dashboard-component>
+          <div class="recent-uploads">
+      <h2>Recent Uploads to Gallery</h2>
+      <div class="recent-section">
+
+        <?php 
+            $gallery_query ="
+            SELECT * From gallery_data"
+            ;
+            $res =mysqli_query($conn, $gallery_query);
+
+            if(mysqli_num_rows($res)>0){
+              while($images =mysqli_fetch_assoc($res )){ ?>
+                
+                <div class="recent-card">
+          <img src="uploads/<?=$images['image'] ?>">
+          <h2>Colorful art</h2>
+          <div>
+            <span class="material-symbols-outlined">
+              keyboard_arrow_down
+            </span>
+          </div>
+        </div>
+              <?php } }?>
+
+        
+      </div>
+      <button class="orange-gradient">MORE</button class="red-gradient">
           <!-- END OF RECENT UPLOADS -->
         </main>
         <!-- END OF MAIN -->
@@ -166,12 +209,14 @@
                   </div>
                 </div>
               <h3>ABOUT ME</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque dui justo, et ultrices leo iaculis eget.
-                   Sed convallis elit eu pretium congue. Maecenas feugiat commodo purus</p>
+              <p>
+              <?php echo $contactdes ?? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque dui justo, et ultrices leo iaculis eget.
+                   Sed convallis elit eu pretium congue. Maecenas feugiat commodo purus' ?>
+              </p>
               <h3 style="padding: 1rem 0 0.4rem;">CONTACT</h3>
-              <p><b>Email:</b> arinzehill@gmail.com</p>
-              <p><b>Tel:</b> arinzehill@gmail.com</p>
-              <p><b>Address:</b> arinzehill@gmail.com</p>
+              <p><b>Email:</b><?php echo $contactemail ?? ' example@gmail.com' ?></p>
+              <p><b>Tel:</b> <?php echo $contactemail ?? ' no phone added' ?></p>
+              <p><b>Address:</b> <?php echo $contactemail ?? ' no address  added' ?></p></p>
               
                   </div>
             </div>
@@ -193,13 +238,14 @@
         
       </section>
       <section class="exhibition">
-        <div w3-include-html="./pages/exhibition.html"></div>  
+        <!-- <div w3-include-html="./pages/exhibition.html"></div>   -->
+        <?php include "./pages/exhibition.php" ?>
 
       </section>
       <section class="contact ">
         <div w3-include-html="./pages/contact.html"></div>  
       </section>
-      <section class="settings show">
+      <section class="settings ">
         <div w3-include-html="./pages/settings.html"></div>  
       </section>
     </div>

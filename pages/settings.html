@@ -96,7 +96,7 @@
                 name="name"
                 id=""
                 placeholder="Enter name"
-                class="form_data"
+                class="setting_form"
               />
             </div>
             <div>
@@ -106,7 +106,7 @@
                 name="email"
                 id=""
                 placeholder="Enter email"
-                class="form_data"
+                class="setting_form"
               />
             </div>
             <div>
@@ -116,7 +116,7 @@
                 name="tel"
                 id=""
                 placeholder="Enter phone number"
-                class="form_data"
+                class="setting_form"
               />
             </div>
             <div>
@@ -126,7 +126,7 @@
                 name="address"
                 id=""
                 placeholder="Enter address"
-                class="form_data"
+                class="setting_form"
               />
             </div>
           </div>
@@ -154,31 +154,35 @@
                 name="oldpassword"
                 id=""
                 placeholder="Enter Old Password"
+                class="security_form"
               />
             </div>
             <div>
               <h3>New Password</h3>
+              <div id="profile_security_message"></div>
               <input
                 type="text"
                 name="newpassword"
                 id=""
                 placeholder="Enter New Password"
+                class="security_form"
               />
             </div>
             <div>
               <h3>Confirm Password</h3>
               <input
                 type="text"
-                name="confirmpassword"
+                name="cpassword"
                 id=""
-                placeholder="Enter Confirm Password"
+                placeholder="Enter C Password"
+                class="security_form"
               />
             </div>
           </div>
         </div>
         <div class="settings-button">
           <button class="outline">Cancel</button>
-          <button>Save</button>
+          <button id="update_password" onclick="updatepassword(); return false;">Save</button>
         </div>
       </div>
     </div>

@@ -62,7 +62,7 @@
     <page-title pageTitle="Exhibition"></page-title>
 
     <div class="gallery-section">
-      <div class="gallery-container">
+      <!-- <div class="gallery-container">
         <div class="upload-container">
           <div class="blue-gradient file_upload" style="">
             <span class="material-symbols-outlined" style="font-size: 5rem">
@@ -89,66 +89,30 @@
             Upload <span class="material-symbols-outlined"> file_upload </span>
           </button>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="recent-uploads">
         <h2>Recent Uploads to Gallery</h2>
         <div class="recent-section">
-          <div class="recent-card">
-            <img src="./images/colorful.jpg" alt="img" />
-            <h2>Colorful Design</h2>
-            <div>
-              <span class="material-symbols-outlined">
-                keyboard_arrow_down
-              </span>
-            </div>
-          </div>
-          <div class="recent-card">
-            <img src="./images/young-woman.jpg" alt="img" />
-            <h2>Black painting woman</h2>
-            <div>
-              <span class="material-symbols-outlined">
-                keyboard_arrow_down
-              </span>
-            </div>
-          </div>
-          <div class="recent-card">
-            <img src="./images/black-paint.jpg" alt="img" />
-            <h2>Black painting</h2>
-            <div>
-              <span class="material-symbols-outlined">
-                keyboard_arrow_down
-              </span>
-            </div>
-          </div>
-          <div class="recent-card">
-            <img src="./images/lion.jpg" alt="img" />
-            <h2>Lion Design</h2>
-            <div>
-              <span class="material-symbols-outlined">
-                keyboard_arrow_down
-              </span>
-            </div>
-          </div>
-          <div class="recent-card">
-            <img src="./images/black-paint.jpg" alt="" />
-            <h2>Black art</h2>
-            <div>
-              <span class="material-symbols-outlined">
-                keyboard_arrow_down
-              </span>
-            </div>
-          </div>
-  
-          <div class="recent-card">
-            <img src="./images/colorful.jpg" alt="img" />
-            <h2>Colorful art</h2>
-            <div>
-              <span class="material-symbols-outlined">
-                keyboard_arrow_down
-              </span>
-            </div>
-          </div>
+          <?php 
+          $gallery_query ="
+          SELECT * From gallery_data"
+          ;
+          $res =mysqli_query($conn, $gallery_query);
+
+          if(mysqli_num_rows($res)>0){
+            while($images =mysqli_fetch_assoc($res )){ ?>
+              
+              <div class="recent-card">
+        <img src="uploads/<?=$images['image'] ?>">
+        <h2>Colorful art</h2>
+        <div>
+          <span class="material-symbols-outlined">
+            keyboard_arrow_down
+          </span>
+        </div>
+      </div>
+            <?php } }?>
         </div>
       
   </body>

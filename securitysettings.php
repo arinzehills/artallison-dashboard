@@ -1,7 +1,7 @@
 <?php
 
 $connect =new PDO("mysql:host=localhost;dbname=artallison",'root', "");
-$errors=array('name'=>'');
+// $errors=array('name'=>'');
 
     // $data=array(
     //     ':name'=>$_POST["name"],
@@ -11,10 +11,9 @@ $errors=array('name'=>'');
     //     // ':description'=>$_POST["description"],
     // );
     $data=array(
-        ':name'=>$_POST["name"],
-        ':email'=>$_POST["email"],
-        ':tel'=>$_POST["tel"],
-        ':address'=>$_POST["address"]
+        'oldpassword'=>$_POST["oldpassword"],
+        'password'=>$_POST["newpassword"],
+        'cpassword'=>$_POST["cpassword"],
         // ':description'=>$_POST["description"],
     );
 
@@ -30,8 +29,7 @@ $errors=array('name'=>'');
     // }else{  
 
         $query="
-        SELECT * FROM user 
-        ";
+        SELECT * FROM user ";
         
         $statement =$connect->prepare($query);
             $statement->execute();
@@ -43,23 +41,22 @@ $errors=array('name'=>'');
             $query="
                 UPDATE user
                 
-                SET name=:name,email=:email,tel=:tel,address=:address
+                SET password=newpassword
                 ";
             $statement =$connect->prepare($query);
             $statement ->execute($data);
+            
+            echo '<div class="success"
+                style="background:#41f1b6;padding:1rem;border-radius:10px"
+            >Data Updated successfully</div>';
 
-
-        echo '<div class="success"
-            style="background:#41f1b6;padding:1rem;border-radius:10px"
-        >Data Updated successfully</div>';
         }else{
             $query="
                 INSERT INTO user
-                (name,email,tel,address) VALUES(:name,:email,:tel,:address)
+                (password) VALUES(newpassword)
                 ";
             $statement =$connect->prepare($query);
             $statement ->execute($data);
-
 
         echo '<div class="success"
             style="background:#41f1b6;padding:1rem;border-radius:10px"
